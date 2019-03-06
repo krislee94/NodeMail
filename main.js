@@ -28,8 +28,8 @@ let EmailTo = "575558044@qq.com";
 let EmailSubject = "一封暖暖的小邮件";
 
 //每日发送时间
-let EmailHour = 11;
-let EmialMinminute= 40;
+let EmailHour = 12;
+let EmialMinminute= 01;
 
 // 爬取数据的url
 const OneUrl = "http://wufazhuce.com/";
