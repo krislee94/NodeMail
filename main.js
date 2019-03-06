@@ -28,8 +28,8 @@ let EmailTo = "429181215@qq.com";
 let EmailSubject = "来自大洲对你的问候";
 
 //每日发送时间
-let EmailHour = 16;
-let EmialMinminute= 30;
+let EmailHour = 07;
+let EmialMinminute= 10;
 
 // 爬取数据的url
 const OneUrl = "http://wufazhuce.com/";
