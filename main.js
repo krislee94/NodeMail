@@ -32,8 +32,8 @@ let EmailSubject = "来自大洲对你的问候";
 // let EmailHour = 07;
 // let EmialMinminute= 10;
 
-let EmailHour = 09;
-let EmialMinminute= 50;
+let EmailHour = 10;
+let EmialMinminute= 12;
 
 // 爬取数据的url
 const OneUrl = "http://wufazhuce.com/";

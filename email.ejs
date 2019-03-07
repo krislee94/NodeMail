@@ -24,37 +24,37 @@
             <div style="width:25%; text-align:center;">
                 <img style="height:24px;vertical-align:middle;" src='<%= threeDaysData[j].WeatherImgUrl %>' alt="">
             </div
-            <div style="font-size:10px;color:'#F5DEB3';width:7%;letter-spacing:0px;"><%= threeDaysData[j].WeatherText %></div>
+            <span style="font-size:10px;color:rgb(245,222,179);letter-spacing:0px;"><%= threeDaysData[j].WeatherText %></span>
             <span style="width:23%; text-align:center;"><%= threeDaysData[j].Temperature %></span>
             
             
             <% if (threeDaysData[j].PollutionLevel=='level_1') { %>
-                <div style="width:30%; ">
+                <div style="width:32%; ">
                         <span style="display:inline-block;padding:0 8px;line-height:25px;color:#8fc31f; border-radius:15px; text-align:center;"><%= threeDaysData[j].Pollution %></span>
                 </div>
             <% }  %>
             <% if (threeDaysData[j].PollutionLevel=='level_2') { %>
-                <div style="width:30%; ">
+                <div style="width:32%; ">
                         <span style="display:inline-block;padding:0 8px;line-height:25px;color:#d7af0e; border-radius:15px; text-align:center;"><%= threeDaysData[j].Pollution %></span>
                 </div>
             <% }  %>
             <% if (threeDaysData[j].PollutionLevel=='level_3') { %>
-                <div style="width:30%; ">
+                <div style="width:32%; ">
                         <span style="display:inline-block;padding:0 8px;line-height:25px;color:#f39800; border-radius:15px; text-align:center;"><%= threeDaysData[j].Pollution %></span>
                 </div>
             <% }  %>
             <% if (threeDaysData[j].PollutionLevel=='level_4') { %>
-                <div style="width:30%; ">
+                <div style="width:32%; ">
                         <span style="display:inline-block;padding:0 8px;line-height:25px;color:#e2361a; border-radius:15px; text-align:center;"><%= threeDaysData[j].Pollution %></span>
                 </div>
             <% }  %>
             <% if (threeDaysData[j].PollutionLevel=='level_5') { %>
-                <div style="width:30%; ">
+                <div style="width:32%; ">
                         <span style="display:inline-block;padding:0 8px;line-height:25px;color:#5f52a0; border-radius:15px; text-align:center;"><%= threeDaysData[j].Pollution %></span>
                 </div>
             <% }  %>
             <% if (threeDaysData[j].PollutionLevel=='level_6') { %>
-                <div style="width:30%; ">
+                <div style="width:32%; ">
                         <span style="display:inline-block;padding:0 8px;line-height:25px;color:#631541; border-radius:15px; text-align:center;"><%= threeDaysData[j].Pollution %></span>
                 </div>
             <% }  %>
