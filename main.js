@@ -23,13 +23,17 @@ let EamilAuth = {
 let EmailFrom = '"krislee" <lidazhou782767326@qq.com>';
 
 //接收者邮箱地
-let EmailTo = "429181215@qq.com";
+// let EmailTo = "429181215@qq.com";
+let EmailTo = "575558044@qq.com";
 //邮件主题
 let EmailSubject = "来自大洲对你的问候";
 
 //每日发送时间
-let EmailHour = 07;
-let EmialMinminute= 10;
+// let EmailHour = 07;
+// let EmialMinminute= 10;
+
+let EmailHour = 09;
+let EmialMinminute= 30;
 
 // 爬取数据的url
 const OneUrl = "http://wufazhuce.com/";
