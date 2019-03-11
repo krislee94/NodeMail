@@ -23,17 +23,17 @@ let EamilAuth = {
 let EmailFrom = '"krislee" <lidazhou782767326@qq.com>';
 
 //接收者邮箱地
-let EmailTo = "429181215@qq.com";
-// let EmailTo = "575558044@qq.com";
+// let EmailTo = "429181215@qq.com";
+let EmailTo = "575558044@qq.com";
 //邮件主题
 let EmailSubject = "来自帅的不能再帅的大洲对你的问候";
 
 //每日发送时间
-let EmailHour = 07;
-let EmialMinminute= 10;
+// let EmailHour = 07;
+// let EmialMinminute= 10;
 
-// let EmailHour = 10;
-// let EmialMinminute= 44;
+let EmailHour = 14;
+let EmialMinminute= 20;
 
 // 爬取数据的url
 const OneUrl = "http://wufazhuce.com/";
@@ -139,7 +139,7 @@ function getWeatherData(){
 
 // 发动邮件
 function sendMail(HtmlData) {
-    const template = ejs.compile(
+        const template = ejs.compile(
       fs.readFileSync(path.resolve(__dirname, "email.ejs"), "utf8")
     );
     const html = template(HtmlData);
@@ -165,6 +165,7 @@ function sendMail(HtmlData) {
       console.log("邮件发送成功", info.messageId);
       console.log("静等下一次发送");
     });
+
   }
 
 // 聚合
@@ -198,9 +199,17 @@ function getAllDataAndSendMail(){
 }
 
 let rule = new schedule.RecurrenceRule();
+let dayweek = today.getDay();
 rule.dayOfWeek = [0, new schedule.Range(1, 6)];
-rule.hour = EmailHour;
-rule.minute = EmialMinminute;
+if(dayweek == 0 || dayweek == 6){
+  console.log("周六日就5:20给刘婷发邮件");
+  rule.hour = 17;
+  rule.minute = 20;
+}else{
+  console.log("工作日发送邮件")
+  rule.hour = EmailHour;
+  rule.minute = EmialMinminute;
+}
 console.log('NodeMail: 开始等待目标时刻...')
 let j = schedule.scheduleJob(rule, function() {
   console.log("执行任务");
