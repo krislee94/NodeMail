@@ -23,17 +23,17 @@ let EamilAuth = {
 let EmailFrom = '"krislee" <lidazhou782767326@qq.com>';
 
 //接收者邮箱地
-// let EmailTo = "429181215@qq.com";
-let EmailTo = "575558044@qq.com";
+let EmailTo = "429181215@qq.com";
+// let EmailTo = "575558044@qq.com";
 //邮件主题
 let EmailSubject = "来自帅的不能再帅的大洲对你的问候";
 
 //每日发送时间
-// let EmailHour = 07;
-// let EmialMinminute= 10;
+let EmailHour = 07;
+let EmialMinminute= 10;
 
-let EmailHour = 14;
-let EmialMinminute= 20;
+// let EmailHour = 14;
+// let EmialMinminute= 47;
 
 // 爬取数据的url
 const OneUrl = "http://wufazhuce.com/";
@@ -198,20 +198,27 @@ function getAllDataAndSendMail(){
     })
 }
 
+
 let rule = new schedule.RecurrenceRule();
-let dayweek = today.getDay();
 rule.dayOfWeek = [0, new schedule.Range(1, 6)];
-if(dayweek == 0 || dayweek == 6){
-  console.log("周六日就5:20给刘婷发邮件");
-  rule.hour = 17;
-  rule.minute = 20;
-}else{
-  console.log("工作日发送邮件")
-  rule.hour = EmailHour;
-  rule.minute = EmialMinminute;
-}
+rule.hour = EmailHour;
+rule.minute = EmialMinminute;
 console.log('NodeMail: 开始等待目标时刻...')
 let j = schedule.scheduleJob(rule, function() {
   console.log("执行任务");
-  getAllDataAndSendMail();
+  let today = new Date();
+  let dayweek = today.getDay();
+  if(dayweek == 0 || dayweek == 6){
+  console.log("周六日就5:20给刘婷发邮件");
+  rule.hour = 17;
+  rule.minute = 20;
+  console.log(today.getMinutes());
+  let m = schedule.scheduleJob(rule,function(){
+    getAllDataAndSendMail();
+  })
+  }else{
+    console.log("工作日发送邮件")
+   getAllDataAndSendMail();
+  }
+ 
 });
